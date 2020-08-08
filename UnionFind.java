@@ -20,8 +20,8 @@ public class UnionFind {
         if(id[a]!=id[b]){
             for(int i = 0; i< n ;i++){
 
-                if(id[i]==id[a1]){
-                    id[i] = a2;
+                if(id[i]==a2){
+                    id[i] = id[a1]; /* here if you do id[i] = a1 it will put a1 in the place but not the the earlier unions made by a2*/
                 }
             }
 
@@ -43,7 +43,7 @@ public class UnionFind {
         }
         System.out.println(uf.find(2,3));
         uf.union(2,3, n);
-        uf.union(3,4, n);
+        uf.union(3,4,n);
         System.out.println(uf.find(2,4));
         for(int i=0; i<n ; i++)
         {
