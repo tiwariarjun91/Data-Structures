@@ -1,4 +1,5 @@
-
+# Time complexity: O(logn)
+# Space complexity: O(1)
 
 def BinarySearch(nums,target)-> bool:
     low = 0
