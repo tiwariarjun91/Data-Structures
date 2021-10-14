@@ -32,3 +32,19 @@ def BinarySearch1(nums,target)-> bool:
     return False
 
 print(BinarySearch1(nums,2))
+
+def BinarySearchRecursive(nums,target,low = 0,high = -1)-> bool:
+    if high == -1:
+        
+        high = len(nums) - 1
+    mid = low + (high-low)//2
+    if nums[mid] == target:
+        return True
+    elif target > nums[mid]:
+        return BinarySearchRecursive(nums,target,mid+1,high)
+    else:
+        return BinarySearchRecursive(nums,target,low,mid-1)
+    
+    return False
+
+print(BinarySearchRecursive(nums,2,0,-1))
